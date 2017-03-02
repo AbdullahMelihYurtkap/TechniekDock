@@ -14,5 +14,14 @@ class Group_model extends CI_Model{
 	
 	return $this->db->insert('group', $data);
 	}
+
+	public function set_users_group()
+	{
+		$data = array(
+			'username' => $this->input->post('username')
+			);
+	
+	return $this->db->insert('users', $data);
+	}
 }
 ?>

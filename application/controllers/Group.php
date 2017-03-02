@@ -27,8 +27,28 @@ class Group extends CI_Controller {
         	else
         	{
         		$this->group_model->set_groups();
-        		$this->load->view('group/success');
+        		$this->load->view('group/add_users');
 			}
 	}
+
+	public function add_users_group()
+	{
+			$this->load->helper('form');
+			$this->load->library('form_validation');
+
+			$this->form_validation->set_rules('username', 'Username', 'required');
+
+			if ($this->form_validation->run() === FALSE)
+        	{
+        		$this->load->view('group/add_users');
+        	}
+        	else
+        	{
+        		$this->group_model->set_users_group();
+        		$this->load->view('group/create_group');
+			}
+	}
+	
+
 }
 ?>

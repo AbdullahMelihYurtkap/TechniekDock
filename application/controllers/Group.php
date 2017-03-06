@@ -5,6 +5,9 @@ class Group extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('group_model'); 
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+
 	}
 
 	public function index()
@@ -15,9 +18,6 @@ class Group extends CI_Controller {
 	
 	public function create_group()
 	{
-			$this->load->helper('form');
-			$this->load->library('form_validation');
-
 			$this->form_validation->set_rules('name', 'Name', 'required');
 
 			if ($this->form_validation->run() === FALSE)
@@ -33,9 +33,6 @@ class Group extends CI_Controller {
 
 	public function add_users_group()
 	{
-			$this->load->helper('form');
-			$this->load->library('form_validation');
-
 			$this->form_validation->set_rules('username', 'Username', 'required');
 
 			if ($this->form_validation->run() === FALSE)

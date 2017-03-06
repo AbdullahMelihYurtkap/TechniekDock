@@ -15,7 +15,9 @@ class Group extends CI_Controller {
 	public function index()
 	{
 
-
+		    $this->load->view('template/header');
+        	$this->load->view('group/info');
+        	$this->load->view('template/footer');
 	}
 	
 	public function create_group()
@@ -24,12 +26,16 @@ class Group extends CI_Controller {
 
 			if ($this->form_validation->run() === FALSE)
         	{
+        		$this->load->view('template/header');
         		$this->load->view('group/create_group');
+        		$this->load->view('template/footer');
         	}
         	else
         	{
+        		$this->load->view('template/header');
         		$this->group_model->set_groups();
         		$this->load->view('group/add_users');
+        		$this->load->view('template/footer');
 			}
 	}
 
@@ -39,12 +45,15 @@ class Group extends CI_Controller {
 
 			if ($this->form_validation->run() === FALSE)
         	{
+        		$this->load->view('template/header');
         		$this->load->view('group/add_users');
         	}
         	else
         	{
+        		$this->load->view('template/header');
         		$this->group_model->set_users_group();
         		$this->load->view('group/create_group');
+        		$this->load->view('template/footer');
 			}
 	}
 	

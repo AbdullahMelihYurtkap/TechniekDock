@@ -1,7 +1,12 @@
-<ul class="nav nav-tabs">
-  			<li role="presentation"><a href="<?php echo site_url('group/create_group') ?>">Home</a></li>
- 		 	<li role="presentation" class="active" ><a href="">Informatie</a></li>
-  			<li role="presentation"><a href="#">...</a></li>
-</ul>
+<div class="jumbotron">
+<nav class="nav">
+  <a class="nav-link" href="<?php echo site_url('group') ?>">Home</a>
+  <a class="nav-link active" <a href=""> Informatie </a>
+  <a class="nav-link" href="#">Link</a>
+  <a class="nav-link disabled" href="#">Disabled</a>
+</nav>
 
-<h1>yarraam</h1>
+
+<h1>Some information about the webapp</h1>
+
+<p>Details in here</p>

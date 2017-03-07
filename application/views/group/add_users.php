@@ -2,7 +2,7 @@
 
 <?php echo form_open('group/add_users_group'); ?>
 
-<div class="jumbotron">
+
 <nav class="nav">
   <a class="nav-link active " href="<?php echo site_url('group') ?>">Home</a>
   <a class="nav-link" <a href="<?php echo site_url('group/info') ?>"> Informatie </a>

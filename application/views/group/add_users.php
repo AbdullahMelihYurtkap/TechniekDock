@@ -16,10 +16,13 @@
     <div class="input-group">
       <input type="text" class="form-control" name = "username" placeholder="Leerling naam">
       <span class="input-group-btn">
-        <button class="btn btn-default" name="submit" type="submit ">Go!</button>
+        <button class="btn btn-default" name="submit" type="submit ">Voeg toe!</button>
       </span>
     </div>
   </div>
 </div>
-
 </form>
+
+    <div class="input-group">
+        <button class="btn btn-default" name="submit" type="submit ">Voeg nieuwe leerling toe!</button>
+    </div>

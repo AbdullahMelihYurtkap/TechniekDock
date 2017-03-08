@@ -6,5 +6,6 @@
     <script> type="text/javascript"	src="<?php echo base_url("stlyle/js/bootstrap.js") ?>"</script>
 </head>
 <body>
-	<div class="container">
+	<div class="container-fluid">
 	<div class="jumbotron">
+	<a href="admin/index" class="btn btn-secondary btn-lg active" role="button" style="float: right;" aria-pressed="true">Admin</a>

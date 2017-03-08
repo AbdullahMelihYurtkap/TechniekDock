@@ -43,10 +43,10 @@ class Group extends CI_Controller {
 	    		$this->load->view('group/add_users');
 	    		$this->load->view('template/footer');
 			}
-		}
+	}
 
-		public function add_users_group()
-		{
+	public function add_users_group()
+	{
 			$this->form_validation->set_rules('username', 'Username', 'required');
 
 			if ($this->form_validation->run() === FALSE)
@@ -62,7 +62,7 @@ class Group extends CI_Controller {
 	    		$this->load->view('group/create_group');
 	    		$this->load->view('template/footer');
 			}
-		}
+	}
 	
 
 }

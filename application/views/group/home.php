@@ -6,3 +6,6 @@
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="group/create_group" role="button">Let's go!</a>
   </p>
+
+
+

@@ -1,13 +1,12 @@
 <?php
 class Group extends CI_Controller {
-
-	public function __construct()
+   
+    public function __construct()
 	{
 		parent::__construct();
 
-		$this->load->model('group_model'); 
-		
-
+		$this->load->model('group_model');
+		$this->load->library('session');
 	}
 
 	public function index()
@@ -28,15 +27,14 @@ class Group extends CI_Controller {
 
 	public function create_group()
 	{
-			$this->form_validation->set_rules('name', 'Groep naam', 'required');
-
-			if ($this->form_validation->run() === FALSE)
-	    	{
-	    		$this->load->view('template/header');
+			$this->form_validation->set_rules('name', 'Name', 'required');
+			
+			if ($this->form_validation->run() === FALSE){
+				
+				$this->load->view('template/header');
 	    		$this->load->view('group/create_group');
 	    		$this->load->view('template/footer');
-	    	}
-	    	else
+			} else
 	    	{
 	    		$this->load->view('template/header');
 	    		$this->group_model->set_groups();
@@ -63,7 +61,6 @@ class Group extends CI_Controller {
 	    		$this->load->view('template/footer');
 			}
 	}
-	
 
 }
 ?>

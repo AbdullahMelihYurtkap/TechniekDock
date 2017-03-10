@@ -6,8 +6,6 @@ class Group extends CI_Controller {
 		parent::__construct();
 
 		$this->load->model('group_model'); 
-		
-
 	}
 
 	public function index()

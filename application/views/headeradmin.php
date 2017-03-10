@@ -8,4 +8,5 @@
 <body>
 	<div class="container-fluid">
 	<div class="jumbotron">
-	<a href="login/index" class="btn btn-secondary btn-lg active" role="button" style="float: right;" aria-pressed="true">Admin</a>
+	<a href="../group" class="btn btn-secondary btn-lg active" role="button" style="float: right;" aria-pressed="true">Terug naar spel</a>
+	<a href="" class="btn btn-secondary btn-lg active" role="button" style="float: right;" aria-pressed="true">Admin</a>

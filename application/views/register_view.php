@@ -1,8 +1,6 @@
-	<div class="jumbotron">
+<title>Registeren</title>
 
-		<title>Inlog Pagina</title>
-	
-	 <body>
+<body>
     <div class="container"  style="margin-top:100px;">
 
       <div class="row">
@@ -20,23 +18,29 @@
               </div>
               <?php
               }
-              echo form_open('../login','class="myclass"');
+              echo form_open('login/register','class="myclass"');
               ?>
 
                 <div class="form-group">
                   <?php
-                    echo form_label('Gebruikersnaam','username');
-                    echo form_input('username','','class="form-control" id="username" placeholder="Gebruikersnaam"')
+                    echo form_label('Full Name','fullname');
+                    echo form_input('fullname','','class="form-control" id="fullname" placeholder="Nama Panjang"')
                   ?>
                 </div>
                 <div class="form-group">
                   <?php
-                    echo form_label('Wachtwoord','password');
-                    echo form_password('password','','class="form-control" id="password" placeholder="Wachtwoord"')
+                    echo form_label('Username','username');
+                    echo form_input('username','','class="form-control" id="username" placeholder="Nama Pengguna"')
                   ?>
                 </div>
-                <?php echo form_submit('login', 'Login', 'class="btn btn-primary"') ?>
-                <a href="<?php echo site_url('../login/register') ?>" class="btn btn-link">Registeren</a>
+                <div class="form-group">
+                  <?php
+                    echo form_label('Password','password');
+                    echo form_password('password','','class="form-control" id="password" placeholder="Kata Sandi"')
+                  ?>
+                </div>
+                <?php echo form_submit('daftar', 'Register', 'class="btn btn-primary"') ?>
+                <a href="<?php echo site_url('../admin') ?>" class="btn btn-link">Sign In</a>
               <?php echo form_close() ?>
 
             </div>
@@ -46,10 +50,3 @@
       </div>
 
     </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="<?php echo base_url('style/js/jquery.min.js') ?>"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="<?php echo base_url('style/js/bootstrap.min.js') ?>"></script>
-  </body>
-</div>

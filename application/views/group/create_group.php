@@ -13,7 +13,7 @@
 		<h1>Groep aanmaken</h1>
 
 
-		<div class="row">
+ <div class="row">
 		  <div class="col-lg-4">
 		    <div class="input-group">
 		      <input type="text" class="form-control" name = "name" placeholder="Groep naam">

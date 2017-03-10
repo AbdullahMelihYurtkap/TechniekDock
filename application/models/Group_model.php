@@ -11,7 +11,7 @@ class Group_model extends CI_Model{
 		$data = array(
 			'name' => $this->input->post('name')
 			);
-		
+
 	return $this->db->insert('group', $data);
 	}
 

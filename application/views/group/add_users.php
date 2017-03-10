@@ -11,6 +11,8 @@
 </nav>
 	<h1>Leerlingen toevoegen</h1>
 
+ 
+
 <div class="row">
   <div class="col-lg-4">
     <div class="input-group">

@@ -62,5 +62,17 @@ class Group extends CI_Controller {
 			}
 	}
 
+	public function getvalue()
+	{
+		$this->session->set_userdata('name', 'value');
+
+		if ($this->input->post('submit')==true) {
+			$data['value']= $this->input->post('name');
+			$this->session->userdata('name',$data['value']);
+			$this->load->view('group/create_group',$data);
+		}
+
+	}
+
 }
 ?>

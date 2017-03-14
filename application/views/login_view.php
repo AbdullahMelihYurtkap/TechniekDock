@@ -20,7 +20,7 @@
               </div>
               <?php
               }
-              echo form_open('../login','class="myclass"');
+              echo form_open('login','class="myclass"');
               ?>
 
                 <div class="form-group">

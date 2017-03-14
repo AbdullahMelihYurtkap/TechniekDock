@@ -12,7 +12,7 @@ class Group extends CI_Controller {
 	{
 
 	    $this->load->view('template/header');
-		$this->load->view('group/home');
+		$this->load->view('home');
 		$this->load->view('template/footer');
 	}
 
@@ -20,7 +20,7 @@ class Group extends CI_Controller {
 	{
 
 		    $this->load->view('template/header');
-	    	$this->load->view('group/info');
+	    	$this->load->view('info');
 	    	$this->load->view('template/footer');
 	}
 
@@ -31,13 +31,13 @@ class Group extends CI_Controller {
 			if ($this->form_validation->run() === FALSE){
 				
 				$this->load->view('template/header');
-	    		$this->load->view('group/create_group');
+	    		$this->load->view('create_group');
 	    		$this->load->view('template/footer');
 			} else
 	    	{
 	    		$this->load->view('template/header');
 	    		$this->group_model->set_groups();
-	    		$this->load->view('group/add_users');
+	    		$this->load->view('add_users');
 	    		$this->load->view('template/footer');
 			}
 	}
@@ -49,14 +49,14 @@ class Group extends CI_Controller {
 			if ($this->form_validation->run() === FALSE)
 	    	{
 	    		$this->load->view('template/header');
-	    		$this->load->view('group/add_users');
+	    		$this->load->view('add_users');
 	    		$this->load->view('template/footer');
 	    	}
 	    	else
 	    	{
-	    		$this->load->view('template/header');
 	    		$this->group_model->set_users_group();
-	    		$this->load->view('group/create_group');
+	    		$this->load->view('template/header');
+	    		$this->load->view('create_group');
 	    		$this->load->view('template/footer');
 			}
 	}
@@ -68,7 +68,7 @@ class Group extends CI_Controller {
 		if ($this->input->post('submit')==true) {
 			$data['value']= $this->input->post('name');
 			$this->session->userdata('name',$data['value']);
-			$this->load->view('group/create_group',$data);
+			$this->load->view('create_group',$data);
 		}
 
 	}

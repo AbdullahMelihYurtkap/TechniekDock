@@ -4,8 +4,8 @@
 <div class="jumbotron">
 
 <nav class="nav">
-  <a class="nav-link active" href="<?php echo site_url('group') ?>">Home</a>
-  <a class="nav-link" <a href="<?php echo site_url('group/info') ?>"> Informatie </a>
+  <a class="nav-link active" href="<?php echo site_url('../group') ?>">Home</a>
+  <a class="nav-link" <a href="<?php echo site_url('../group/info') ?>"> Informatie </a>
   <a class="nav-link" href="#">Link</a>
   <a class="nav-link disabled" href="#">Disabled</a>
 </nav>

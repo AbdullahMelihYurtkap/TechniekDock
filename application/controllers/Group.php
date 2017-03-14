@@ -19,9 +19,9 @@ class Group extends CI_Controller {
 	public function info()
 	{
 
-		    $this->load->view('template/header');
-	    	$this->load->view('group/info');
-	    	$this->load->view('template/footer');
+		$this->load->view('template/header');
+	    $this->load->view('group/info');
+	    $this->load->view('template/footer');
 	}
 
 	public function create_group()
@@ -35,9 +35,14 @@ class Group extends CI_Controller {
 	    		$this->load->view('template/footer');
 			} else
 	    	{
+	    		$this->session->set_userdata('name'=> 'valu');
+	    		$data['valu']= $this->input->post('name');
+			    $this->session->userdata('name',$data['valu']);
+
+
 	    		$this->load->view('template/header');
 	    		$this->group_model->set_groups();
-	    		$this->load->view('group/add_users');
+	    		$this->load->view('group/add_users', $data);
 	    		$this->load->view('template/footer');
 			}
 	}

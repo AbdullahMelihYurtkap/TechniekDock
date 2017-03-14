@@ -566,7 +566,7 @@ h6, .h6 {
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
-}  
+}
 
 .display-1 {
   font-size: 6rem;
@@ -4948,6 +4948,11 @@ a.badge:focus, a.badge:hover {
   border-radius: 0;
 }
 
+.jumbotron-influid-footer {
+
+  margin-top: 1rem;
+
+}
 .alert {
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;

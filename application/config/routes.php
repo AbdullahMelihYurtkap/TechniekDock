@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$route['admin/index'] = 'admin';
 $route['group/create_group'] = 'group/create_group';
 $route['default_controller'] = 'group/index';
 $route['404_override'] = '';

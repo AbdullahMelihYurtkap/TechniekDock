@@ -1,6 +1,6 @@
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('group/create_group'); ?>
+<?php echo form_open('../group/create_group'); ?>
 <div class="jumbotron">
 
 <nav class="nav">

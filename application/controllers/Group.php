@@ -61,6 +61,8 @@ class Group extends CI_Controller {
 	    		$this->group_model->set_users_group();
 	    		$this->load->view('group/create_group');
 	    		$this->load->view('template/footer');
+
+	    		
 			}
 		}
 	

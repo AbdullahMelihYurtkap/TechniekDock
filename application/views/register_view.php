@@ -40,7 +40,7 @@
                   ?>
                 </div>
                 <?php echo form_submit('daftar', 'Register', 'class="btn btn-primary"') ?>
-                <a href="<?php echo site_url('../admin') ?>" class="btn btn-link">Sign In</a>
+                <a href="<?php echo site_url('admin') ?>" class="btn btn-link">Sign In</a>
               <?php echo form_close() ?>
 
             </div>

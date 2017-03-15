@@ -20,7 +20,7 @@
               </div>
               <?php
               }
-              echo form_open('../login','class="myclass"');
+              echo form_open('login','class="myclass"');
               ?>
 
                 <div class="form-group">
@@ -36,7 +36,7 @@
                   ?>
                 </div>
                 <?php echo form_submit('login', 'Login', 'class="btn btn-primary"') ?>
-                <a href="<?php echo site_url('../login/register') ?>" class="btn btn-link">Registeren</a>
+                <a href="<?php echo site_url('login/register') ?>" class="btn btn-link">Registeren</a>
               <?php echo form_close() ?>
 
             </div>

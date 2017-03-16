@@ -30,7 +30,7 @@ class Login_model extends CI_Model {
 			'username' => $un,
 			'password' => $pw
 		);
-		$this->db->insert('user', $data);
+		$this->db->insert('admin', $data);
 	}
 }
 ?>

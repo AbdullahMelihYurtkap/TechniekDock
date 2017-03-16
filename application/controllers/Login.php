@@ -12,7 +12,9 @@ class Login extends CI_Controller {
 	    	$this->load->view('login_view');
 	    	$this->load->view('template/footer');
 	    } else {
-	    	redirect(base_url('index.php/home'), 'refresh');
+	    	$this->load->view('headeradmin');
+	    	$this->load->view('home_view');
+	    	$this->load->view('template/footer');
 	    }
 	}
 

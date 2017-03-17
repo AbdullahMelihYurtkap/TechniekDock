@@ -59,19 +59,20 @@ class Group extends CI_Controller {
 	    	{
 	    		$this->load->view('template/header');
 	    		$this->group_model->set_users_group();
-	    		$this->load->view('group/create_group');
+	    		$this->load->view('create_group');
 	    		$this->load->view('template/footer');
 
 	    		
 			}
-		}
+		}	    		
 
-		public function getvalue()
-		{
-			if($this->input->post('submit')==true) {
-				$data['value'] = $this->input->('name');
-				$this->session->('name', $data['value']);
-			}
-		}
+
+		 public function getvalue()
+		 {
+		 	if($this->input->post('submit')==true) {
+		 		$data['value'] = $this->input->('name');
+		 		$this->session->('name', $data['value']);
+		 	}
+		 }
 }
 ?>

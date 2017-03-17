@@ -32,5 +32,10 @@ class Login_model extends CI_Model {
 		);
 		$this->db->insert('admin', $data);
 	}
+
+	public function Getgroups()
+	{
+		return $this->db->get('group')->result();
+    }
 }
 ?>

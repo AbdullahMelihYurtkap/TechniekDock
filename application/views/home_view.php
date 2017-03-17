@@ -39,7 +39,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="<?php echo site_url('home/logout') ?>">Uitloggen</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -53,12 +53,31 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-    <div class="container"  style="margin-top:20px;">
+  <div class="container"  style="margin-top:20px;">
 
-      <div class="jumbotron">
-        <h1>Hello, world!</h1>
-        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <p><a class="btn btn-primary btn-lg" href="<?php echo site_url('home/logout') ?>" role="button">Logout</a></p>
-      </div>
 
+    <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Alle groepen</div>
+    <div class="panel-body">
+      
     </div>
+
+    <!-- Table -->
+    <table class="table">
+      <tr>  
+          <td>Groups</td> 
+              </tr>     
+                <?php  
+                 foreach ($getgroup as $row)  
+               {  
+               ?>
+               <tr> 
+                <td><?php echo $row->name;?></td>  
+              </tr>  
+               <?php } ?> 
+    </table>
+  </div>
+  </div>
+
+          

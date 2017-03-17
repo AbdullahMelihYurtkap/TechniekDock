@@ -3,6 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+
+		$this->load->model('login_model'); 
+	}
+
+
 	public function index()
 	{
 	    $this->form_validation->set_rules('username', 'Username', 'trim|required');
@@ -13,8 +21,10 @@ class Login extends CI_Controller {
 	    	$this->load->view('template/footer');
 	    } else {
 	    	$this->load->view('headeradmin');
-	    	$this->load->view('home_view');
+	    	$data['getgroup'] = $this->login_model->Getgroups();
+	    	$this->load->view('home_view', $data);
 	    	$this->load->view('template/footer');
+
 	    }
 	}
 

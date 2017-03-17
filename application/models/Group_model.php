@@ -23,5 +23,7 @@ class Group_model extends CI_Model{
 	
 	return $this->db->insert('users', $data);
 	}
+
+	
 }
 ?>

@@ -15,6 +15,8 @@
       <a class="navbar-brand" href="#">Brand</a>
     </div>
 
+    
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
@@ -58,6 +60,8 @@
               <h1>Hello, world!</h1>
               <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
               <p><a class="btn btn-primary btn-lg" href="<?php echo site_url('home/logout') ?>" role="button">Logout</a></p>
+
             </div>
         </div>
 </div>
+

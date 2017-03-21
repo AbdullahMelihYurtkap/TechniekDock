@@ -24,7 +24,7 @@
                 <div class="form-group">
                   <?php
                     echo form_label('Full Name','fullname');
-                    echo form_input('fullname','','class="form-control" id="fullname" placeholder="Volledige naam"')
+                    echo form_input('fullname','','class="form-control" id="fullname" placeholder="Full name"')
                   ?>
                 </div>
                 <div class="form-group">
@@ -36,11 +36,11 @@
                 <div class="form-group">
                   <?php
                     echo form_label('Password','password');
-                    echo form_password('password','','class="form-control" id="password" placeholder="Wachtwoord"')
+                    echo form_password('password','','class="form-control" id="password" placeholder="Password"')
                   ?>
                 </div>
-                <?php echo form_submit('daftar', 'Register', 'class="btn btn-primary"') ?>
-                <a href="<?php echo site_url('admin') ?>" class="btn btn-link">Sign In</a>
+                <?php echo form_submit('daftar', 'Registeren', 'class="btn btn-primary"') ?>
+                <a href="<?php echo site_url('admin') ?>" class="btn btn-link">Login</a>
               <?php echo form_close() ?>
 
             </div>

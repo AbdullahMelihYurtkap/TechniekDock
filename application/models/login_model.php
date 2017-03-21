@@ -37,5 +37,10 @@ class Login_model extends CI_Model {
 	{
 		return $this->db->get('group')->result();
     }
+
+    public function Delgroups($id){
+		$this->db->where('id', $id);
+		$this->db->delete('group');
+	}
 }
 ?>

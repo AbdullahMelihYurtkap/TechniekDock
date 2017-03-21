@@ -3,6 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+
+		$this->load->model('login_model'); 
+	}
+
 	public function index()
 	{
 		if ($this->session->userdata('logged_id')) {
@@ -23,6 +30,14 @@ class Home extends CI_Controller {
 		$this->session->unset_userdata('logged_in');
 		$this->session->sess_destroy();
 		redirect(site_url('login'), 'refresh');
+	}
+
+	public function Delete($id)
+	{
+		$this->load->model('login_model');
+
+		$data = $this->login_model->Delgroups($id);
+		redirect('index/login');
 	}
 
 }

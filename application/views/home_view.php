@@ -74,6 +74,7 @@
                ?>
                <tr> 
                 <td><?php echo $row->name;?></td>  
+                <td><a href="<?php echo base_url();?>index.php/Home/Delete/<?php echo $row->id?>">Delete</a></td>
               </tr>  
                <?php } ?> 
     </table>

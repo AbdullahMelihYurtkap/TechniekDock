@@ -1,6 +1,13 @@
 <?php
 class Group extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+
+		$this->load->model('group_model'); 
+	}
+
 	
 	public function index()
 	{

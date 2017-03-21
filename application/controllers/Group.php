@@ -1,6 +1,11 @@
 <?php
 class Group extends CI_Controller {
 
+
+	function __construct() {
+        parent::__construct(); 
+		$this->load->model('group_model');
+    }
 	
 	public function index()
 	{
@@ -20,6 +25,7 @@ class Group extends CI_Controller {
 
 	public function create_group()
 	{
+
 			$this->form_validation->set_rules('name', 'Groep naam', 'required');
 
 			if ($this->form_validation->run() === FALSE)

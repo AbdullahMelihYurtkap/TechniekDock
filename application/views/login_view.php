@@ -3,6 +3,7 @@
 		<title>Inlog Pagina</title>
 	
 	 <body>
+   <a href="../group" class="btn btn-secondary btn-lg active" role="button" style="float: right;" aria-pressed="true">Terug naar het spel</a>
     <div class="container"  style="margin-top:100px;">
 
       <div class="row">
@@ -11,7 +12,7 @@
           <div class="panel panel-default">
             <div class="panel-body">
 
-              <?php
+            <?php
               if(validation_errors()){
               ?>
               <div class="alert alert-danger alert-dismissible" role="alert">

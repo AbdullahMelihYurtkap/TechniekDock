@@ -8,23 +8,23 @@ class Group extends CI_Controller {
 		$this->load->model('group_model'); 
 	}
 
-	
+	// This shows the home page
 	public function index()
 	{
-
-	    $this->load->view('template/header');
+		$this->load->view('template/header');
 		$this->load->view('group/home');
 		$this->load->view('template/footer');
 	}
 
+	// This shows the info page
 	public function info()
 	{
-
-		    $this->load->view('template/header');
+			$this->load->view('template/header');
 	    	$this->load->view('group/info');
 	    	$this->load->view('template/footer');
 	}
 
+	// With this function you can create a group
 	public function create_group()
 	{
 			$this->form_validation->set_rules('name', 'Groep naam', 'required');
@@ -44,6 +44,7 @@ class Group extends CI_Controller {
 			}
 		}
 
+		// With this function you can create users
 		public function add_users_group()
 		{
 			$this->form_validation->set_rules('username', 'Username', 'required');

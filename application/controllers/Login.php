@@ -6,11 +6,11 @@ class Login extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-
+			// load model
 		$this->load->model('login_model'); 
 	}
 
-
+			// login check, if the login form is filled correct you will redirect to the admin page. If not you will be redirected to the login page
 	public function index()
 	{
 	    $this->form_validation->set_rules('username', 'Username', 'trim|required');
@@ -28,6 +28,8 @@ class Login extends CI_Controller {
 	    }
 	}
 
+	
+		// password check
 	function check_basis($password)
 	{
 		$username = $this->input->post('username');
@@ -44,7 +46,7 @@ class Login extends CI_Controller {
 			return false;
 		}
 	}
-
+		// registration of the admin
 	public function register(){
 		if($this->input->post('daftar')){
 			$this->login->register();

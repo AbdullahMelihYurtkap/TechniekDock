@@ -64,7 +64,7 @@ class Group extends CI_Controller {
 	    		$this->load->view('template/header');
 	    		$this->group_model->set_users_group();
 	    		$data['name'] = $this->input->post('name');
-	    		$this->load->view('group/create_group', $data);
+	    		$this->load->view('group/add_users', $data);
 	    		$this->load->view('template/footer');
 
 	    		

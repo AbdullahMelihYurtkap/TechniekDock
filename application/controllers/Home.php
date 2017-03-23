@@ -44,7 +44,7 @@ class Home extends CI_Controller {
 		$this->load->model('login_model');
 
 		$data = $this->login_model->Delgroups($id);
-		redirect('login','refresh');
+		redirect('refresh');
 	}
 
 }

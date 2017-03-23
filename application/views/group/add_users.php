@@ -17,7 +17,8 @@
     <div class="input-group">
       <input type="text" class="form-control" name = "username" placeholder="Leerling naam">
       <input type="hidden" name="groupname" value="<?php echo set_value('name');?>" />
-      <span class="input-group-btn">
+        
+        <span class="input-group-btn">
         <button class="btn btn-default" name="submit" type="submit ">Voeg toe!</button>
       </span>
     </div>

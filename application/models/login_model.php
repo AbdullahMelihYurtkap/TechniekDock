@@ -3,8 +3,8 @@ defined('BASEPATH') OR exit('No direct script acces allowed');
 
 class Login_model extends CI_Model {
 
-
-	public function login($username, $password)
+	// login function
+	function login($username, $password)
 	{
 		$this->db->select('id,fullname,username,password');
 		$this->db->from('admin');
@@ -19,7 +19,7 @@ class Login_model extends CI_Model {
 			return false;
 		}
 	}
-
+	// registration admin in database
 	function register(){
 		$fn = $this->input->post('fullname');
 		$un = $this->input->post('username');
@@ -33,6 +33,7 @@ class Login_model extends CI_Model {
 		$this->db->insert('admin', $data);
 	}
 
+	// get list of groups
 	public function Getgroups()
 	{
 		return $this->db->get('group')->result();

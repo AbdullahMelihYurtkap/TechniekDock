@@ -18,7 +18,8 @@ class Group_model extends CI_Model{
 	public function set_users_group()
 	{
 		$data = array(
-			'username' => $this->input->post('username')
+			'username' => $this->input->post('username'),
+			'groupname' => $this->input->post('groupname')
 			);
 	
 	return $this->db->insert('users', $data);

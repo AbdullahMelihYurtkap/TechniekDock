@@ -1,12 +1,14 @@
 <?php
 class Group extends CI_Controller {
 
+
 	public function __construct()
 	{
-		parent::__construct();
-
-		$this->load->model('group_model'); 
-	}
+        parent::__construct(); 
+		$this->load->model('group_model');
+    }
+	
+	
 
 	// This shows the home page
 	public function index()
@@ -27,6 +29,7 @@ class Group extends CI_Controller {
 	// With this function you can create a group
 	public function create_group()
 	{
+
 			$this->form_validation->set_rules('name', 'Groep naam', 'required');
 
 			if ($this->form_validation->run() === FALSE)

@@ -1,12 +1,5 @@
-<div id="puzzell">
 <?php echo validation_errors(); ?>
-<script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="refreshform.js"></script>
+<?php echo form_open('group/add_users_to_group'); ?>
 
 <?php $hindik = set_value ('name'); ?>
 <nav class="nav">
@@ -19,36 +12,12 @@
   <h2>Groep naam:</h2>
   <h3><b><?php echo $hindik ?></b></h3>
   <div id="mainform">
-    <form id="form" name="form">
     <label>Name:</label>
     <input id="username" placeholder="Your Name" type="text">
 
-    <div class="dropdown">
-  <button class="dropbtn">groepnaam</button>
-  <div class="dropdown-content">
-              <?php  
-                 foreach ($getgroup as $row1)  
-               {  
-               ?>
-      <a href="#"><?php echo $row1->name;?></a>
-    <?php } ?> 
-  </div>
-</div>
-
-    <input id="submit" type="button" value="submit">
     </form>
   </div>
   
-
-
-
-
-
-
-
-
-
-
 <table class="table">
       <tr>  
           <td>Groups</td> 
@@ -64,24 +33,6 @@
 </table>
 
 
-<script type="text/javascript">
-
-function quiz(){
-  jQuery.ajax({
-    'url': '<?php echo base_url();?>index.php/Group/ekesh',
-    'success': function(data){
-      jQuery('#puzzell').html(data);
-    }
-  })
-  
-}
-
-</script>
-
-
-  <button onclick="javascript:quiz();">Start</button>
-
-  </div>
 
 
   <style>

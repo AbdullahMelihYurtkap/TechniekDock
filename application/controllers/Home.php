@@ -21,7 +21,6 @@ class Home extends CI_Controller {
 			$data["fullname"] = $session_data['fullname'];
 			$data["username"] = $session_data['username'];
 		    $this->load->view('home_view', $data);
-		    echo base_url("home");
 
 		} else {
 
@@ -42,9 +41,8 @@ class Home extends CI_Controller {
 	public function Delete($id)
 	{
 		$this->load->model('login_model');
-
 		$data = $this->login_model->Delgroups($id);
-		redirect('login','refresh');
+		redirect(site_url('login'), 'refresh');
 	}
 
 }

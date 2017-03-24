@@ -9,4 +9,4 @@
 <body>
 	<div class="container-fluid">
 	<div class="jumbotron">
-	<a href="login/index" class="btn btn-secondary btn-lg active" role="button" style="float: right;" aria-pressed="true">Admin</a>
+	<a href="<?php echo base_url(); ?>index.php/login/index" class="btn btn-secondary btn-lg active" role="button" style="float: right;" aria-pressed="true">Admin</a>

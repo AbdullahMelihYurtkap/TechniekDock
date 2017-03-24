@@ -1,6 +1,18 @@
 
 <div class="jumbotron">
 
+<div class="collapse navbar-collapse" id="navbar1">
+      <ul class="nav navbar-nav navbar-right">
+        <?php if ($this->session->userdata('logged_in')){ ?>
+        <li><a href="<?php echo base_url(); ?>index.php/profile/index"<p class="navbar-text">Hello <?php echo $this->session->userdata('fullname'); ?></p></a></li>
+        <li><a href="<?php echo base_url(); ?>index.php/home/logout">Log Out</a></li>
+        <?php } else { ?>
+        <li><a href="<?php echo base_url(); ?>index.php/login">Login</a></li>
+        <li><a href="<?php echo base_url(); ?>index.php/signup">Signup</a></li>
+        <?php } ?>
+      </ul>
+    </div>
+
     <title>Home</title>
         
         <nav class="navbar navbar-default navbar-static-top">
@@ -39,7 +51,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="<?php echo site_url('home/logout') ?>">Uitloggen</a></li>
+        <li><a href="<?php echo base_url(); ?>index.php/home/logout">Uitloggen</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">

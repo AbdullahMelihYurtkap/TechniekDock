@@ -6,6 +6,8 @@ class Group extends CI_Controller {
 	{
         parent::__construct(); 
 		$this->load->model('group_model');
+		$this->load->model('login_model'); 
+
     }
 	
 	
@@ -13,9 +15,9 @@ class Group extends CI_Controller {
 	// This shows the home page
 	public function index()
 	{
-		$this->load->view('template/header');
-		$this->load->view('group/home');
-		$this->load->view('template/footer');
+			$this->load->view('template/header');
+			$this->load->view('group/home');
+			$this->load->view('template/footer');
 	}
 
 	// This shows the info page
@@ -30,7 +32,7 @@ class Group extends CI_Controller {
 	public function create_group()
 	{
 
-			$this->form_validation->set_rules('name', 'Groep naam', 'required');
+			$this->form_validation->set_rules('name', 'Groep naam', 'trim|required|is_unique[group.name]');
 
 			if ($this->form_validation->run() === FALSE)
 	    	{
@@ -42,7 +44,8 @@ class Group extends CI_Controller {
 	    	{
 	    		$this->load->view('template/header');
 	    		$this->group_model->set_groups();
-	    		$this->load->view('group/add_users');
+	    		$data['getgroup'] = $this->login_model->Getgroups();
+	    		$this->load->view('group/add_users', $data);
 	    		$this->load->view('template/footer');
 			}
 		}
@@ -67,6 +70,29 @@ class Group extends CI_Controller {
 	    		$this->load->view('group/add_users', $data);
 	    		$this->load->view('template/footer');
 			}
+		}
+
+		public function ekesh()
+		{
+			$this->form_validation->set_rules('username', 'Username', 'required');
+
+				if ($this->form_validation->run() === FALSE)
+		    	{
+		    		
+		    		$this->load->view('template/header');
+		    		$data['getgroup'] = $this->login_model->Getgroups();
+		    		$this->load->view('group/add_users', $data);
+		    		$this->load->view('template/footer');
+		    	}
+		    	else
+		    	{
+					
+					$this->load->view('template/header');
+		    		$this->group_model->set_users_group();
+		    		$data['name'] = $this->input->post('name');
+		    		$this->load->view('group/add_users', $data);
+		    		
+				}
 		}
 
 }

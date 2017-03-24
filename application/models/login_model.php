@@ -43,5 +43,13 @@ class Login_model extends CI_Model {
 		$this->db->where('id', $id);
 		$this->db->delete('group');
 	}
+
+	public function GetUserInfo()
+	{
+		$this->db->select('fullname,username,password');
+		$this->db->from('admin');
+		$un = $this->input->post('username');
+		$this->db->where('username', $un);
+	}
 }
 ?>

@@ -3,22 +3,6 @@ defined('BASEPATH') OR exit('No direct script acces allowed');
 
 class Login_model extends CI_Model {
 
-	// login function
-	function login($username, $password)
-	{
-		$this->db->select('id,fullname,username,password');
-		$this->db->from('admin');
-		$this->db->where('username', $username);
-		$this->db->where('password', md5($password));
-		$this->db->limit(1);
-
-		$query =  $this->db->get();
-		if ($query->num_rows()==1) {
-			return $query->result();
-		} else {
-			return false;
-		}
-	}
 	// registration admin in database
 	function register(){
 		$fn = $this->input->post('fullname');
@@ -50,6 +34,15 @@ class Login_model extends CI_Model {
 		$this->db->from('admin');
 		$un = $this->input->post('username');
 		$this->db->where('username', $un);
+	}
+
+	public function get_user($username, $pwd)
+	{
+		$this->db->where('username', $username);
+		$this->db->where('password', md5($pwd));
+		$query = $this->db->get('admin');
+		return $query->result();
+
 	}
 }
 ?>

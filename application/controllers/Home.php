@@ -15,13 +15,15 @@ class Home extends CI_Controller {
 	
 	public function index()
 	{
-		if ($this->session->userdata('logged_id')) {
-			$session_data = $this->session->userdata('logged_id');
+		if ($this->session->userdata('logged_in')) {
+			$session_data = $this->session->userdata('logged_in');
 			$data["id"] = $session_data['id'];
 			$data["fullname"] = $session_data['fullname'];
 			$data["username"] = $session_data['username'];
-		    $this->load->view('home_view', $data);
-
+			$data['getgroup'] = $this->login_model->Getgroups();
+			$this->load->view('headeradmin');
+			$this->load->view('home_view', $data);
+			$this->load->view('template/footer');
 		} else {
 
 			redirect('login', 'refresh');
@@ -42,7 +44,7 @@ class Home extends CI_Controller {
 	{
 		$this->load->model('login_model');
 		$data = $this->login_model->Delgroups($id);
-		redirect(site_url('login'), 'refresh');
+		redirect(site_url('home'), 'refresh');
 	}
 
 }

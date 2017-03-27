@@ -8,11 +8,14 @@ class Login extends CI_Controller {
 		parent::__construct();
 			// load model
 		$this->load->model('login_model'); 
+
 	}
 
 			// login check, if the login form is filled correct you will redirect to the admin page. If not you will be redirected to the login page
 	public function index()
 	{
+
+
 	    $username = $this->input->post("username");
         $password = $this->input->post("password");
 
@@ -20,9 +23,15 @@ class Login extends CI_Controller {
 	    $this->form_validation->set_rules('password', 'Password', 'trim|required');
 	    
 	    if ($this->form_validation->run()==false) {
-	    	$this->load->view('headeradmin');
-	    	$this->load->view('login_view');
-	    	$this->load->view('template/footer');
+
+
+			if ($this->session->userdata('logged_in')) {
+						redirect("home");
+		    		} else {
+		    			$this->load->view('headeradmin');
+				    	$this->load->view('login_view');
+				    	$this->load->view('template/footer');
+		    		}
 	    } 
 	    else {
 	    	
@@ -32,11 +41,13 @@ class Login extends CI_Controller {
 	    		$sess_data = array('logged_in' => TRUE, 'uname' => $uresult[0]->username, 'uid' => $uresult[0]->id);
 	    		$this->session->set_userdata($sess_data);
 	    		redirect("home/index");
+
 	    	}
 	    	else 
 	    	{
 	    		$this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Verkeerde usernaam of wachtwoord!</div>');
-	    		redirect("login/index");	
+	    		redirect("login/index");
+	    		
 	    	}
 
 			$this->load->view('headeradmin');

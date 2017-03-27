@@ -4,8 +4,7 @@
 <div class="collapse navbar-collapse" id="navbar1">
       <ul class="nav navbar-nav navbar-right">
         <?php if ($this->session->userdata('logged_in')){ ?>
-        <li><a href="<?php echo base_url(); ?>index.php/profile/index"<p class="navbar-text">Hello <?php echo $this->session->userdata('fullname'); ?></p></a></li>
-        <li><a href="<?php echo base_url(); ?>index.php/home/logout">Log Out</a></li>
+        
         <?php } else { ?>
         <li><a href="<?php echo base_url(); ?>index.php/login">Login</a></li>
         <li><a href="<?php echo base_url(); ?>index.php/signup">Signup</a></li>
@@ -37,6 +36,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
+      <li><a href="<?php echo base_url(); ?>index.php/home/index"<p>Hello <?php echo $this->session->userdata('uname'); ?></p></a>
         <li><a href="<?php echo base_url(); ?>index.php/home/logout">Uitloggen</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -54,7 +54,7 @@
     <!-- Table -->
     <table class="table">
       <tr>  
-          <td>Groups</td> 
+          <td><span style="font-weight:bold">Groups</span></td> 
               </tr>     
                 <?php  
                  foreach ($getgroup as $row)  

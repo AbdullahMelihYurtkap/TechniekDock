@@ -45,6 +45,11 @@ class Group extends CI_Controller {
 	    		$this->load->view('template/header');
 	    		$this->group_model->set_groups();
 	    		$data['getgroup'] = $this->login_model->Getgroups();
+	    		$newdata = array(
+                   'name'  => $this->input->post('name'),
+               );
+
+				$this->session->set_userdata($newdata);	
 	    		$this->load->view('group/add_users', $data);
 	    		$this->load->view('template/footer');
 			}
@@ -62,11 +67,11 @@ class Group extends CI_Controller {
 	    		$this->load->view('template/footer');
 	    	}
 	    	else
-	    	{
-				
+	    	{	
 				$this->load->view('template/header');
 	    		$this->group_model->set_users_group();
 	    		$data['name'] = $this->input->post('name');
+	    		$data['getgroup'] = $this->login_model->Getgroups();
 	    		$this->load->view('group/add_users', $data);
 	    		$this->load->view('template/footer');
 			}
@@ -91,9 +96,7 @@ class Group extends CI_Controller {
 		    		$this->group_model->set_users_group();
 		    		$data['name'] = $this->input->post('name');
 		    		$this->load->view('group/add_users', $data);
-		    		
 				}
 		}
-
 }
 ?>

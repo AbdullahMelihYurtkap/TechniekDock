@@ -22,7 +22,19 @@
         <span class="input-group-btn">
           <button class="btn btn-default" name="submit" type="submit ">Voegtoe!</button>
         </span>
+              
+
       </div>
+          <?php foreach($getonegroup as $row) { ?>
+      <table>
+
+          <tr>
+              <td><?php echo $row->username;?></td>
+          </tr>
+          
+      </table>
+
+      <?php } ?>
     </div>
   </div>
 </form>

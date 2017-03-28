@@ -23,6 +23,13 @@ class Login_model extends CI_Model {
 		return $this->db->get('group')->result();
     }
 
+    public function GetOneGroup()
+    {
+    	$this->db->select('username');
+    	$this->db->where('groupname', $this->session->userdata('name'));
+    	return $this->db->get('users')->result();
+    }
+
     public function Delgroups($id){
 		$this->db->where('id', $id);
 		$this->db->delete('group');

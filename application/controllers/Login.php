@@ -11,7 +11,7 @@ class Login extends CI_Controller {
 
 	}
 
-			// login check, if the login form is filled correct you will redirect to the admin page. If not you will be redirected to the login page
+			// login check, if the login form is filled correct you will redirect to the home/admin page. If not you will be redirected to the login page AND if user is logged in you'll be redirected to the home/admin page
 	public function index()
 	{
 

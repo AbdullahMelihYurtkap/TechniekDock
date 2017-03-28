@@ -28,7 +28,7 @@ class Group extends CI_Controller {
 	    	$this->load->view('template/footer');
 	}
 
-	// With this function you can create a group
+	// Function which you can create a group
 	public function create_group()
 	{
 
@@ -50,7 +50,7 @@ class Group extends CI_Controller {
 			}
 		}
 
-		// With this function you can create users
+		// Function which you can create users
 		public function add_users_group()
 		{
 			$this->form_validation->set_rules('username', 'Username', 'required');

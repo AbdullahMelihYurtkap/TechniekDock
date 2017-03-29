@@ -6,16 +6,14 @@ class Group_model extends CI_Model{
 
 	}
 
-
 		// Set group in db
 	public function set_groups()
 	{
 		$data = array(
 			'name' => $this->input->post('name')
 			);
-		
-	return $this->db->insert('group', $data);
 
+		return $this->db->insert('group', $data);
 	}
 
 		// Set users in 'one' group in db 
@@ -26,8 +24,7 @@ class Group_model extends CI_Model{
 			'groupname' => $this->session->userdata('name')
 			);
 	
-	return $this->db->insert('users', $data);
-
+		return $this->db->insert('users', $data);
 	}
 
 		// Get all groups
@@ -37,7 +34,7 @@ class Group_model extends CI_Model{
     }
 
     	// Get 'one' group by groupname
-	 public function GetOneGroup()
+	public function GetOneGroup()
     {
     	$this->db->select('username');
     	$this->db->where('groupname', $this->session->userdata('name'));
@@ -45,11 +42,25 @@ class Group_model extends CI_Model{
     }
 
     	// Delete 'one' group by id
-    public function Delgroups($id){
+    public function Delgroups($id)
+    {
 		$this->db->where('id', $id);
 		$this->db->delete('group');
 	}
 
+		// Delete all groups, refresh a/i
+    public function DelAllGroups()
+    {
+		$this->db->truncate('group');
+	}
+
+		// Delete all users, refresh a/i
+	public function DellAllUsers()
+	{
+		$this->db->truncate('users');
+	}
+
+		//	Set group ready
 	public function SetGroupReady()
 	{
 		$data = array('status' => 1);  

@@ -73,8 +73,6 @@ class Group extends CI_Controller {
     		$data['getonegroup'] = $this->group_model->GetOneGroup();
     		$this->load->view('group/add_users', $data);
     		$this->load->view('template/footer');
-
-
 		}
 	}
 

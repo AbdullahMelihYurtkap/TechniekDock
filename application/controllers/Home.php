@@ -33,7 +33,7 @@ class Home extends CI_Controller {
 		
 	}
 
-		// User can logout
+		// Admin can logout
 	public function logout()
 	{
 		$this->session->unset_userdata('logged_in');
@@ -41,18 +41,38 @@ class Home extends CI_Controller {
 		redirect(site_url('login'), 'refresh');
 	}
 
-		// User can delete groups
+		// Admin can delete groups
 	public function Delete($id)
 	{
-		$data = $this->group_model->Delgroups($id);
-		redirect(site_url('home'), 'refresh');
+		if ($this->session->userdata('logged_in')) {
+			$data = $this->group_model->Delgroups($id);
+			redirect(site_url('home'), 'refresh');
+		} else {
+			redirect(site_url('login'), 'refresh');
+		}
 	}
 
-		// User can delete all groups
-	public function DeleteAllGroups()
+		// Admin can delete all groups
+	public function Delete_All_Groups()
 	{
-		$data = $this->group_model->DelAllGroups();
-		redirect(site_url('home'), 'refresh');
+		if ($this->session->userdata('logged_in')) {
+			$data = $this->group_model->DelAllGroups();
+			redirect(site_url('home'), 'refresh');
+		} else {
+			redirect(site_url('login'), 'refresh');
+		}
+	}
+
+		// Admin can delete all users
+	public function Delete_All_Users()
+	{
+		if ($this->session->userdata('logged_in')) {
+			$data = $this->group_model->DellAllUsers();
+			redirect(site_url('home'), 'refresh');
+		} else {
+			redirect(site_url('login'), 'refresh');
+		}
+		
 	}
 
 }

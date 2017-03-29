@@ -48,7 +48,8 @@
     <!-- Default panel contents -->
     <div class="panel-heading">Alle groepen</div>
     <div class="panel-body">
-      <a href="<?php echo base_url();?>index.php/Home/DeleteAllGroups/>">Delete</a>
+      <a href="<?php echo base_url();?>index.php/Home/Delete_All_Groups/>">Delete groups</a>
+      <a href="<?php echo base_url();?>index.php/Home/Delete_All_Users/>">Delete users</a>
     </div>
 
     <!-- Table -->

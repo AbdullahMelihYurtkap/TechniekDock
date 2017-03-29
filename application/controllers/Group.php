@@ -97,5 +97,10 @@ class Group extends CI_Controller {
 		    		$this->load->view('group/add_users', $data);
 				}
 		}
+
+		public function quiz()
+		{
+			$this->load->view('quiz/index');
+		}
 }
 ?>

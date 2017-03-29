@@ -39,6 +39,10 @@
   </div>
 </form>
 
+<button type="button" class="btn btn-success" 
+        onclick="<?php echo base_url()?>controller/function">Ready!</button>
+       
+
 
 
 

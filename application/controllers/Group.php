@@ -14,7 +14,7 @@ class Group extends CI_Controller {
 
 	// This shows the home page
 	public function index()
-	{
+	{		
 			$this->load->view('template/header');
 			$this->load->view('group/home');
 			$this->load->view('template/footer');
@@ -32,70 +32,56 @@ class Group extends CI_Controller {
 	public function create_group()
 	{
 
-			$this->form_validation->set_rules('name', 'Groep naam', 'trim|required|is_unique[group.name]');
+		$this->form_validation->set_rules('name', 'Groep naam', 'trim|required|is_unique[group.name]');
 
-			if ($this->form_validation->run() === FALSE)
-	    	{
-	    		$this->load->view('template/header');
-	    		$this->load->view('group/create_group');
-	    		$this->load->view('template/footer');
-	    	}
-	    	else
-	    	{
-	    		$this->load->view('template/header');
-	    		$this->group_model->set_groups();
-	    		$data['getonegroup'] = $this->login_model->GetOneGroup();
-	    		$gname = array(
-                   'name'  => $this->input->post('name'),
-               );
+		if ($this->form_validation->run() === FALSE)
+    	{
+    		$this->load->view('template/header');
+    		$this->load->view('group/create_group');
+    		$this->load->view('template/footer');
+    	}
+    	else
+    	{
+    		$this->load->view('template/header');
+    		$this->group_model->set_groups();
+    		$data['getonegroup'] = $this->group_model->GetOneGroup();
+    		$gname = array(
+               'name'  => $this->input->post('name'),
+           );
 
-				$this->session->set_userdata($gname);	
-	    		$this->load->view('group/add_users', $data);
-	    		$this->load->view('template/footer');
-			}
+			$this->session->set_userdata($gname);	
+    		$this->load->view('group/add_users', $data);
+    		$this->load->view('template/footer');
 		}
+	}
 
-		// Function which you can create users
-		public function add_users_group()
-		{
-			$this->form_validation->set_rules('username', 'Username', 'required');
+	// Function which you can create users
+	public function add_users_group()
+	{
+		$this->form_validation->set_rules('username', 'Username', 'required');
 
-			if ($this->form_validation->run() === FALSE)
-	    	{
-	    		$this->load->view('template/header');
-	    		$this->load->view('group/add_users');
-	    		$this->load->view('template/footer');
-	    	}
-	    	else
-	    	{	
-				$this->load->view('template/header');
-	    		$this->group_model->set_users_group();
-	    		$data['getonegroup'] = $this->login_model->GetOneGroup();
-	    		$this->load->view('group/add_users', $data);
-	    		$this->load->view('template/footer');
-			}
+		if ($this->form_validation->run() === FALSE)
+    	{
+    		$this->load->view('template/header');
+    		$this->load->view('group/add_users');
+    		$this->load->view('template/footer');
+    	}
+    	else
+    	{	
+			$this->load->view('template/header');
+    		$this->group_model->set_users_group();
+    		$data['getonegroup'] = $this->group_model->GetOneGroup();
+    		$this->load->view('group/add_users', $data);
+    		$this->load->view('template/footer');
+
+
 		}
+	}
 
-		public function ekesh()
-		{
-			$this->form_validation->set_rules('username', 'Username', 'required');
 
-				if ($this->form_validation->run() === FALSE)
-		    	{
-		    		
-		    		$this->load->view('template/header');
-		    		$data['getgroup'] = $this->login_model->Getgroups();
-		    		$this->load->view('group/add_users', $data);
-		    		$this->load->view('template/footer');
-		    	}
-		    	else
-		    	{
-					
-					$this->load->view('template/header');
-		    		$this->group_model->set_users_group();
-		    		$data['name'] = $this->input->post('name');
-		    		$this->load->view('group/add_users', $data);
-				}
-		}
+	public function Set_Group_Ready()
+	{
+		$this->group_model->SetGroupReady();
+	}
 }
 ?>

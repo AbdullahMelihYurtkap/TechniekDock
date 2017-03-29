@@ -17,24 +17,6 @@ class Login_model extends CI_Model {
 		$this->db->insert('admin', $data);
 	}
 
-	// get list of groups
-	public function Getgroups()
-	{
-		return $this->db->get('group')->result();
-    }
-
-    public function GetOneGroup()
-    {
-    	$this->db->select('username');
-    	$this->db->where('groupname', $this->session->userdata('name'));
-    	return $this->db->get('users')->result();
-    }
-
-    public function Delgroups($id){
-		$this->db->where('id', $id);
-		$this->db->delete('group');
-	}
-
 	public function GetUserInfo()
 	{
 		$this->db->select('fullname,username,password');

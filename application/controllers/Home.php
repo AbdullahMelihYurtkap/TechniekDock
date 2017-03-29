@@ -8,6 +8,7 @@ class Home extends CI_Controller {
 		parent::__construct();
 
 		$this->load->model('login_model'); 
+		$this->load->model('group_model'); 
 	}
 
 	// This checks the data from the input and the database, if it's correct it will be redirected to the adminpage. 
@@ -21,7 +22,7 @@ class Home extends CI_Controller {
 			$data["id"] = $session_data['id'];
 			$data["fullname"] = $session_data['fullname'];
 			$data["username"] = $session_data['username'];
-			$data['getgroup'] = $this->login_model->Getgroups();
+			$data['getgroup'] = $this->group_model->Getgroups();
 			$this->load->view('headeradmin');
 			$this->load->view('home_view', $data);
 			$this->load->view('template/footer');
@@ -44,7 +45,7 @@ class Home extends CI_Controller {
 	public function Delete($id)
 	{
 		$this->load->model('login_model');
-		$data = $this->login_model->Delgroups($id);
+		$data = $this->group_model->Delgroups($id);
 		redirect(site_url('home'), 'refresh');
 	}
 

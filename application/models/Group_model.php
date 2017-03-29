@@ -50,6 +50,11 @@ class Group_model extends CI_Model{
 		$this->db->delete('group');
 	}
 
+		// Delete all groups
+    public function DelAllGroups(){
+		$this->db->truncate('group');
+	}
+
 	public function SetGroupReady()
 	{
 		$data = array('status' => 1);  

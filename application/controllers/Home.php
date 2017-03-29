@@ -11,9 +11,9 @@ class Home extends CI_Controller {
 		$this->load->model('group_model'); 
 	}
 
-	// This checks the data from the input and the database, if it's correct it will be redirected to the adminpage. 
-	// If not it will return to the login page.
-	// Set data in session
+		// This checks the data from the input and the database, if it's correct it will be redirected to the adminpage. 
+		// If not it will return to the login page.
+		// Set data in session
 	
 	public function index()
 	{
@@ -33,7 +33,7 @@ class Home extends CI_Controller {
 		
 	}
 
-	// User can logout
+		// User can logout
 	public function logout()
 	{
 		$this->session->unset_userdata('logged_in');
@@ -41,11 +41,17 @@ class Home extends CI_Controller {
 		redirect(site_url('login'), 'refresh');
 	}
 
-	// User can delete groups
+		// User can delete groups
 	public function Delete($id)
 	{
-		$this->load->model('login_model');
 		$data = $this->group_model->Delgroups($id);
+		redirect(site_url('home'), 'refresh');
+	}
+
+		// User can delete all groups
+	public function DeleteAllGroups()
+	{
+		$data = $this->group_model->DelAllGroups();
 		redirect(site_url('home'), 'refresh');
 	}
 

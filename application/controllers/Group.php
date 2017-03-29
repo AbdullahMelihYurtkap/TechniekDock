@@ -18,6 +18,10 @@ class Group extends CI_Controller {
 			$this->load->view('template/header');
 			$this->load->view('group/home');
 			$this->load->view('template/footer');
+			$gname = array(
+              'groupnameisset' => FALSE
+           );
+			$this->session->set_userdata($gname);
 	}
 
 	// This shows the info page
@@ -47,6 +51,7 @@ class Group extends CI_Controller {
     		$data['getonegroup'] = $this->group_model->GetOneGroup();
     		$gname = array(
                'name'  => $this->input->post('name'),
+               'groupnameisset' => TRUE
            );
 
 			$this->session->set_userdata($gname);	
@@ -62,6 +67,7 @@ class Group extends CI_Controller {
 
 		if ($this->form_validation->run() === FALSE)
     	{
+    		$this->session->unset_userdata('groupnameisset');
     		$this->load->view('template/header');
     		$this->load->view('group/add_users');
     		$this->load->view('template/footer');
@@ -71,6 +77,11 @@ class Group extends CI_Controller {
 			$this->load->view('template/header');
     		$this->group_model->set_users_group();
     		$data['getonegroup'] = $this->group_model->GetOneGroup();
+    		$gname = array(
+               'groupnameisset' => TRUE
+           );
+
+			$this->session->set_userdata($gname);	
     		$this->load->view('group/add_users', $data);
     		$this->load->view('template/footer');
 		}
@@ -79,9 +90,11 @@ class Group extends CI_Controller {
 	public function Set_Group_Ready()
 	{
 		$this->group_model->SetGroupReady();
+		$this->session->unset_userdata('groupnameisset');
 		redirect(site_url('quiz/index'), 'refresh');
 	}
 
 }
 
 ?>
+

@@ -19,13 +19,17 @@
     <div class="col-lg-4">
       <div class="input-group">
         <input type="text" class="form-control" name = "username" placeholder="Leerlingen naam">
-        <span class="input-group-btn">
+        <span class="input-group-bt">
           <button class="btn btn-default" name="submit" type="submit ">Voegtoe!</button>
         </span>
               
 
-      </div>
-          <?php foreach($getonegroup as $row) { ?>
+      </div> 
+      
+      <?php if($this->session->userdata('groupnameisset'))
+      {
+          ?>
+           <?php foreach($getonegroup as $row) { ?>
       <table>
 
           <tr>
@@ -36,7 +40,15 @@
           
       </table>
 
-      <?php } ?>
+      <?php } ?>  
+          <?php
+      }
+      else
+      {
+        redirect("group/create_group");
+      } ?>
+      
+          
     </div>
   </div>
 </form>

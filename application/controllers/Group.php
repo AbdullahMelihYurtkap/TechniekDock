@@ -78,10 +78,10 @@ class Group extends CI_Controller {
 		}
 	}
 
-
 	public function Set_Group_Ready()
 	{
 		$this->group_model->SetGroupReady();
+		redirect(site_url('quiz/index'), 'refresh');
 	}
 
 }

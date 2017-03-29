@@ -30,6 +30,8 @@
 
           <tr>
               <td><?php echo $row->username;?></td>
+
+
           </tr>
           
       </table>
@@ -39,9 +41,12 @@
   </div>
 </form>
 
-<button type="button" class="btn btn-success" 
-        onclick="<?php echo base_url()?>controller/function">Ready!</button>
-       
+<form action="<?php echo base_url();?>index.php/Group/Set_Group_Ready/">
+    <input type="submit" class="btn btn-success" value="Ready!"/>
+</form>
+
+
+
 
 
 

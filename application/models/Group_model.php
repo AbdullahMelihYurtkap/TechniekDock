@@ -53,7 +53,7 @@ class Group_model extends CI_Model{
 	public function SetGroupReady()
 	{
 		$data = array('status' => 1);  
-		$this->db->where('groupname', $this->session->userdata('name'));
+		$this->db->where('name', $this->session->userdata('name'));
 		$this->db->update('group', $data);  
 	}
 }

@@ -3,6 +3,8 @@
 <?php echo form_open('group/add_users_group'); ?>
 <?php $show_group_name = $this->session->userdata('name'); ?>
 
+<title>Techniek Dock</title>
+
 <div class="jumbotron">
 
 

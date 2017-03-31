@@ -1,6 +1,17 @@
+
 <div class="jumbotron">
 
-   
+<div class="collapse navbar-collapse" id="navbar1">
+      <ul class="nav navbar-nav navbar-right">
+        <?php if ($this->session->userdata('logged_in')){ ?>
+        
+        <?php } else { ?>
+        <li><a href="<?php echo base_url(); ?>index.php/login">Login</a></li>
+        <li><a href="<?php echo base_url(); ?>index.php/signup">Signup</a></li>
+        <?php } ?>
+      </ul>
+    </div>
+
     <title>Home</title>
         
         <nav class="navbar navbar-default navbar-static-top">
@@ -25,8 +36,8 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="http://techniekdock.webuda.com/index.php/home/index"<p>Hello admin</p></a>
-        <li><a href="http://techniekdock.webuda.com/index.php/home/logout">Uitloggen</a></li>
+      <li><a href="<?php echo base_url(); ?>index.php/home/index"<p>Hello <?php echo $this->session->userdata('uname'); ?></p></a>
+        <li><a href="<?php echo base_url(); ?>index.php/home/logout">Uitloggen</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -37,8 +48,8 @@
     <!-- Default panel contents -->
     <div class="panel-heading">Alle groepen</div>
     <div class="panel-body">
-      <a href="http://techniekdock.webuda.com/index.php/Home/Delete_All_Groups/>">Delete groups</a>
-      <a href="http://techniekdock.webuda.com/index.php/Home/Delete_All_Users/>">Delete users</a>
+      <a href="<?php echo base_url();?>index.php/Home/Delete_All_Groups/>">Delete groups</a>
+      <a href="<?php echo base_url();?>index.php/Home/Delete_All_Users/>">Delete users</a>
     </div>
 
     <!-- Table -->
@@ -46,12 +57,17 @@
       <tr>  
           <td><span style="font-weight:bold">Groups</span></td> 
               </tr>     
-                 
+                <?php  
+                 foreach ($getgroup as $row)  
+               {  
+               ?>
+               <tr> 
+                <td><?php echo $row->name;?></td>  
+                <td><a href="<?php echo base_url();?>index.php/Home/Delete/<?php echo $row->id?>">Delete</a></td>
+              </tr>  
+               <?php } ?> 
     </table>
   </div>
   </div>
-
-
-</div>
 
           

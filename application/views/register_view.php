@@ -1,6 +1,4 @@
 <title>Registeren</title>
-
-<body>
     <div class="container"  style="margin-top:100px;">
 
       <div class="row">

@@ -2,7 +2,7 @@
 
 <?php echo form_open('group/create_group'); ?>
 <div class="jumbotron">
-
+<title>Techniek Dock</title>
 <nav class="nav">
   <a class="nav-link active" href="<?php echo site_url('group') ?>">Home</a>
   <a class="nav-link" <a href="<?php echo site_url('group/info') ?>"> Informatie </a>

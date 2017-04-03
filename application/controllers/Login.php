@@ -28,8 +28,8 @@ class Login extends CI_Controller {
 			if ($this->session->userdata('logged_in')) {
 						redirect("home");
 		    		} else {
-		    			$this->load->view('headeradmin');
-				    	$this->load->view('login_view');
+		    			$this->load->view('admin/headeradmin');
+				    	$this->load->view('admin/login_view');
 				    	$this->load->view('template/footer');
 		    		}
 	    } 
@@ -50,8 +50,8 @@ class Login extends CI_Controller {
 	    		
 	    	}
 
-			$this->load->view('headeradmin');
-	    	$this->load->view('home_view', $data);
+			$this->load->view('admin/headeradmin');
+	    	$this->load->view('admin/home_view', $data);
 	    	$this->load->view('template/footer');
 
 	    }
@@ -63,8 +63,8 @@ class Login extends CI_Controller {
 			$this->login->register();
 			redirect('login');
 		} else{
-			$this->load->view('headeradmin');
-			$this->load->view('register_view');
+			$this->load->view('admin/headeradmin');
+			$this->load->view('admin/register_view');
 			$this->load->view('template/footer');
 		}
 	}

@@ -1,6 +1,5 @@
+<div class="jumbotron">
 <title>Registeren</title>
-
-<body>
     <div class="container"  style="margin-top:100px;">
 
       <div class="row">
@@ -23,24 +22,34 @@
 
                 <div class="form-group">
                   <?php
-                    echo form_label('Full Name','fullname');
-                    echo form_input('fullname','','class="form-control" id="fullname" placeholder="Nama Panjang"')
+
+                    echo form_label('Naam','fullname');
+                    echo form_input('fullname','','class="form-control" id="fullname" placeholder="Volledige naam"')
+
                   ?>
                 </div>
                 <div class="form-group">
                   <?php
-                    echo form_label('Username','username');
-                    echo form_input('username','','class="form-control" id="username" placeholder="Nama Pengguna"')
+
+                    echo form_label('Gebruikersnaam','username');
+                    echo form_input('username','','class="form-control" id="username" placeholder="Gebruikersnaam"')
+
                   ?>
                 </div>
                 <div class="form-group">
                   <?php
+
                     echo form_label('Password','password');
-                    echo form_password('password','','class="form-control" id="password" placeholder="Kata Sandi"')
+                    echo form_password('password','','class="form-control" id="password" placeholder="Password"')
                   ?>
                 </div>
-                <?php echo form_submit('daftar', 'Register', 'class="btn btn-primary"') ?>
-                <a href="<?php echo site_url('../admin') ?>" class="btn btn-link">Sign In</a>
+                <?php echo form_submit('daftar', 'Registeren', 'class="btn btn-primary"') ?>
+               
+                <a href="<?php echo site_url('login') ?>" class="btn btn-link">Login</a>
+                
+                
+                
+
               <?php echo form_close() ?>
 
             </div>

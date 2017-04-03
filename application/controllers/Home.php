@@ -23,8 +23,8 @@ class Home extends CI_Controller {
 			$data["fullname"] = $session_data['fullname'];
 			$data["username"] = $session_data['username'];
 			$data['getgroup'] = $this->group_model->Getgroups();
-			$this->load->view('headeradmin');
-			$this->load->view('home_view', $data);
+			$this->load->view('admin/headeradmin');
+			$this->load->view('admin/home_view', $data);
 			$this->load->view('template/footer');
 		} else {
 

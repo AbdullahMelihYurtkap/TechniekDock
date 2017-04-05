@@ -15,19 +15,23 @@ class Measure extends CI_Controller {
 
 		if($this->form_validation->run() === FALSE)
 		{
-			$this->load->view('template/header');
+			$this->load->view('template/header');		
 			$this->load->view('measure/co2');
 			$this->load->view('template/footer');
+			if ($this->session->userdata('co2isset')) {
+				redirect("quiz/quizdisplay");
+			}
 		}
 		else {
 			
 			$this->measure_model->insert_measure_task();
+				$sess_data = array('co2isset' => TRUE);
+	    	$this->session->set_userdata($sess_data);
 			$this->load->view('template/header');
 			$this->load->view('quiz/measuring_task');
 			$this->load->view('template/footer');
 		}
 		
-
 	}
 
 	public function pijp()

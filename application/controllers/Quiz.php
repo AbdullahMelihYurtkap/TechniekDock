@@ -9,19 +9,27 @@ class Quiz extends CI_Controller {
 	}
 	
 	public function index()
-	{
-		$this->load->view('template/header');
-		$this->load->view('quiz/index');
-		$this->load->view('template/footer');
-		
+	{	
+		if ($this->session->userdata('groupisingame')) {
+				$this->load->view('template/header');
+				$this->load->view('quiz/index');
+				$this->load->view('template/footer');
+			} else {
+				redirect("");
+			}
 	}
 	
 	public function quizdisplay()
 	{
-		$this->data['questions'] = $this->quiz_model->getQuestions();	
-		$this->load->view('template/header');
-		$this->load->view('quiz/play_quiz', $this->data);
-		$this->load->view('template/footer');
+
+		if ($this->session->userdata('groupisingame')) {
+				$this->data['questions'] = $this->quiz_model->getQuestions();	
+				$this->load->view('template/header');
+				$this->load->view('quiz/play_quiz', $this->data);
+				$this->load->view('template/footer');
+			} else {
+				redirect("quiz");
+			}
 	}
 
 	public function resultdisplay()
@@ -47,9 +55,28 @@ class Quiz extends CI_Controller {
 
 	public function measuring_task()
 	{
-		$this->load->view('template/header');
-		$this->load->view('quiz/measuring_task');
-		$this->load->view('template/footer');
+		if ($this->session->userdata('groupisingame')) {
+				
+				if ($this->session->userdata('co2isset')) {
+					$sess_data = array('co2isset' => TRUE);
+			    	$this->session->set_userdata($sess_data);
+			    	$this->load->view('template/header');
+					$this->load->view('quiz/measuring_task');
+					$this->load->view('template/footer');	
+				} else {
+					$sess_data = array('co2isset' => FALSE);
+			    	$this->session->set_userdata($sess_data);
+			    	$this->load->view('template/header');
+					$this->load->view('quiz/measuring_task');
+					$this->load->view('template/footer');	
+				}
+				
+		} else {
+
+			redirect("group");
+		}
+		
+		
 	}
 }
 ?>

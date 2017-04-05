@@ -28,7 +28,10 @@
 	<input type="submit" value="Submit"> 
 
 	</form>
-
+	<form action="<?php echo base_url();?>index.php/Quiz/measuring_task">
+	<input type="submit" value="Meet Opdracht"> 
+	</form>
+	
 </div>
 
 </body>

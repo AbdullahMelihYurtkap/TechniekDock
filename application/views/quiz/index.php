@@ -1,12 +1,7 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Welcome to Techniek Dock Quiz</title>
-</head>
-<body>
+<title>Play Techniek Dock quiz</title>
+
+<div class="jumbotron">
+	
 
 <div id="container">
 	<h1>Welcome to Techniek Dock Quiz</h1>

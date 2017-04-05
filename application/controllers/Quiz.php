@@ -5,19 +5,23 @@ class Quiz extends CI_Controller {
 	public function __construct()
 	{
         parent::__construct(); 
-        $this->load->database();
+        $this->load->model('quiz_model');
 	}
 	
 	public function index()
 	{
+		$this->load->view('template/header');
 		$this->load->view('quiz/index');
+		$this->load->view('template/footer');
+		
 	}
 	
 	public function quizdisplay()
 	{
-			$this->load->model('quiz_model');
-			$this->data['questions'] = $this->quiz_model->getQuestions();	
-			$this->load->view('quiz/play_quiz', $this->data);
+		$this->data['questions'] = $this->quiz_model->getQuestions();	
+		$this->load->view('template/header');
+		$this->load->view('quiz/play_quiz', $this->data);
+		$this->load->view('template/footer');
 	}
 
 	public function resultdisplay()

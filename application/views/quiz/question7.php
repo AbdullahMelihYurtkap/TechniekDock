@@ -1,8 +1,12 @@
-<title>Play Techniek Dock quiz</title>
-
-<div class="jumbotron">
-	
-
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Play Techniek Dock quiz</title>
+</head>
+<body>
 
 <div id="container">
 	<h1>Play the Quiz</h1>
@@ -33,5 +37,3 @@
 
 </body>
 </html>
-
-

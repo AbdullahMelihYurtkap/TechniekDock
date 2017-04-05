@@ -7,7 +7,6 @@
 
 <div class="jumbotron">
 
-
 <nav class="nav">
   <a class="nav-link active " href="<?php echo site_url('group') ?>">Home</a>
   <a class="nav-link" <a href="<?php echo site_url('group/info') ?>"> Informatie </a>
@@ -25,7 +24,6 @@
           <button class="btn btn-default" name="submit" type="submit ">Voegtoe!</button>
         </span>
               
-
       </div> 
       
       <?php if($this->session->userdata('groupnameisset'))

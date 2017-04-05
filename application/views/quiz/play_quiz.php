@@ -31,9 +31,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<br>
 	<input type="submit" value="Submit"> 
 
-	</form>
-
+	</form> 
 </div>
 
 </body>
 </html>
+
+<form action="<?php echo base_url();?>index.php/Quiz/measuring_task/">
+    <input type="submit" class="btn btn-success" value="Meet Opdracht!"/>
+</form>

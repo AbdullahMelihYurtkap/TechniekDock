@@ -40,5 +40,12 @@ class Quiz extends CI_Controller {
 		$this->load->view('quiz/result_display', $this->data);
 
 	}
+
+	public function measuring_task()
+	{
+		$this->load->view('template/header');
+		$this->load->view('quiz/measuring_task');
+		$this->load->view('template/footer');
+	}
 }
 ?>

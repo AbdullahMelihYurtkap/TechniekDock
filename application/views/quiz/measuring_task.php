@@ -12,8 +12,8 @@
 <i class="fa fa-check-square fa-3x" aria-hidden="true"></i><br>
 
 <span class="fa-stack fa-3x">
-<a href="<?php echo base_url(); ?>index.php/quiz//"><i class="fa fa-circle-o fa-stack-2x"></i></a>
-<a href="<?php echo base_url(); ?>index.php/group/"><strong class="fa-stack-1x">1</strong></a>
+<a href="<?php echo base_url(); ?>index.php/measure/co2/"><i class="fa fa-circle-o fa-stack-2x"></i></a>
+<a href="<?php echo base_url(); ?>index.php/measure/co2/"><strong class="fa-stack-1x">1</strong></a>
 </span>
 
 <span class="fa-stack fa-3x">

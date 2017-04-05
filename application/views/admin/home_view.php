@@ -49,6 +49,8 @@
       <a href="<?php echo base_url();?>index.php/Home/Delete_All_Groups/>">Delete groups</a>
       &nbsp;
       <a href="<?php echo base_url();?>index.php/Home/Delete_All_Users/>">Delete users</a>
+      &nbsp;
+      <a href="<?php echo base_url();?>index.php/Home/Delete_All_Measure/>">Delete measurings</a>
     </div>
 
     <!-- Table -->

@@ -60,7 +60,14 @@ class Group_model extends CI_Model{
 		$this->db->truncate('users');
 	}
 
+	// Delete all measuring data, refresh a/i
+	public function DellAllMeasuring()
+	{
+		$this->db->truncate('measuring_task');
+	}
+
 		//	Set group ready
+
 	public function SetGroupReady()
 	{
 		$data = array('status' => 1);  

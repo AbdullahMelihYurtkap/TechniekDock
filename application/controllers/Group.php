@@ -19,7 +19,8 @@ class Group extends CI_Controller {
 			$this->load->view('group/home');
 			$this->load->view('template/footer');
 			$gname = array(
-              'groupnameisset' => FALSE
+              'groupnameisset' => FALSE,
+              'groupisingame' => FALSE
            );
 			$this->session->set_userdata($gname);
 	}
@@ -53,7 +54,6 @@ class Group extends CI_Controller {
                'name'  => $this->input->post('name'),
                'groupnameisset' => TRUE
            );
-
 			$this->session->set_userdata($gname);	
     		$this->load->view('group/add_users', $data);
     		$this->load->view('template/footer');
@@ -78,9 +78,9 @@ class Group extends CI_Controller {
     		$this->group_model->set_users_group();
     		$data['getonegroup'] = $this->group_model->GetOneGroup();
     		$gname = array(
-               'groupnameisset' => TRUE
+               'groupnameisset' => TRUE,
+               'co2isset' => FALSE
            );
-
 			$this->session->set_userdata($gname);	
     		$this->load->view('group/add_users', $data);
     		$this->load->view('template/footer');
@@ -91,6 +91,8 @@ class Group extends CI_Controller {
 	{
 		$this->group_model->SetGroupReady();
 		$this->session->unset_userdata('groupnameisset');
+		$sess_data = array('groupisingame' => TRUE);
+	    	$this->session->set_userdata($sess_data);
 		redirect(site_url('quiz/index'), 'refresh');
 	}
 

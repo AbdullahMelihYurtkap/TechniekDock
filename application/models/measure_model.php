@@ -10,6 +10,7 @@ class measure_model extends CI_Model {
 		$data = array(
 			'task' => $this->input->post('task'),
 			'answer' => $this->input->post('answer'),
+			'groupname' => $this->session->userdata('name'),
 			'date' => date('Y-m-d H:i:s')
 			);
 	

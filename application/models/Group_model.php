@@ -30,6 +30,7 @@ class Group_model extends CI_Model{
 		// Get all groups
 	public function Getgroups()
 	{
+		$this->db->where('status', 1);
 		return $this->db->get('group')->result();
     }
 

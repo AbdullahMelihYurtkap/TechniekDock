@@ -47,9 +47,11 @@ class Quiz extends CI_Controller {
 			'ques10' => $this->input->post('quizid10'),
 		);
 
+		$this->load->view('template/header');
 		$this->load->model('quiz_model');
 		$this->data['results'] = $this->quiz_model->getQuestions();
 		$this->load->view('quiz/result_display', $this->data);
+		$this->load->view('template/footer');
 
 	}
 

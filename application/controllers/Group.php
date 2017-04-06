@@ -7,11 +7,8 @@ class Group extends CI_Controller {
         parent::__construct(); 
 		$this->load->model('group_model');
 		$this->load->model('login_model'); 
-
     }
 	
-	
-
 	// This shows the home page
 	public function index()
 	{		
@@ -36,7 +33,6 @@ class Group extends CI_Controller {
 	// Function which you can create a group
 	public function create_group()
 	{
-
 		$this->form_validation->set_rules('name', 'Groep naam', 'trim|required|is_unique[group.name]');
 
 		if ($this->form_validation->run() === FALSE)
@@ -92,10 +88,9 @@ class Group extends CI_Controller {
 		$this->group_model->SetGroupReady();
 		$this->session->unset_userdata('groupnameisset');
 		$sess_data = array('groupisingame' => TRUE);
-	    	$this->session->set_userdata($sess_data);
+	    $this->session->set_userdata($sess_data);
 		redirect(site_url('quiz/index'), 'refresh');
 	}
-
 }
 
 ?>

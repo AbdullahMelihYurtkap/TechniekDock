@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script acces allowed');
 
-class measure_model extends CI_Model {
+class Measure_model extends CI_Model {
 
 	public function insert_measure_task()
 	{	

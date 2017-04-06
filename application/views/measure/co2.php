@@ -8,7 +8,7 @@
 <div class="jumbotron">
 	<title>Meetopdracht</title>
 		
-		<h1>Waarden co2</h1>
+		<h1>Waarde co2</h1>
 
 		<?php $task = "co2" ?>
 

@@ -12,8 +12,7 @@
 
 	<?php foreach($questions as $row) { ?>
 
-	<?php $ans_array = array($row->choice1, $row->choice2, $row->choice3, $row->answer);
-	shuffle($ans_array);?>
+	<?php $ans_array = array($row->choice1, $row->choice2, $row->choice3, $row->answer);?>
 
 	<p><?=$row->quizID?>.<?=$row->question?></p>
 

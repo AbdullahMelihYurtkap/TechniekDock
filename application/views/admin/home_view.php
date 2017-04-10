@@ -24,19 +24,19 @@
       <a class="navbar-brand" href="#">Brand</a>
     </div>
 
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <?php echo $this->session->userdata('uname'); ?> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <!-- <li><a href="<?php echo site_url('home/logout') ?>"></a></li> -->
+            <li role="separator" class="divider"></li>
+            <li><a href="<?php echo site_url('home/logout') ?>">Uitloggen</a></li>
+          </ul>
+        </li>
+      </ul>
+
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form class="navbar-form navbar-left">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-                <button type="submit" class="btn btn-default">Submit</button>
-            </div>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="<?php echo base_url(); ?>index.php/home/index"<p>Hello <?php echo $this->session->userdata('uname'); ?></p></a>
-            <li><a href="<?php echo base_url(); ?>index.php/home/logout">Uitloggen</a></li>
-        </ul>
-    </div><!-- /.navbar-collapse -->
+    
   </div><!-- /.container-fluid -->
   <div class="container"  style="margin-top:20px;">
 
@@ -46,17 +46,18 @@
     <div class="panel-heading">Alle groepen</div>
    
     <div class="panel-body">
-      <a href="<?php echo base_url();?>index.php/Home/Delete_All_Groups/>">Delete groups</a>
+        <button class="btn btn-outline-secondary" href="<?php echo base_url();?>index.php/Home/Delete_All_Groups/>" type="button">Delete groups</button>
       &nbsp;
-      <a href="<?php echo base_url();?>index.php/Home/Delete_All_Users/>">Delete users</a>
+        <button class="btn btn-outline-secondary" href="<?php echo base_url();?>index.php/Home/Delete_All_Users/>" role="button">Delete users</button>
       &nbsp;
-      <a href="<?php echo base_url();?>index.php/Home/Delete_All_Measure/>">Delete measurings</a>
+        <button class="btn btn-outline-secondary" href="<?php echo base_url();?>index.php/Home/Delete_All_Measure/>" role="button">Delete measurings</button>
     </div>
 
     <!-- Table -->
     <table class="table">
       <tr>  
         <td><span style="font-weight:bold">Groups</span></td> 
+        <td>  </td>
       </tr>     
         <?php  
          foreach ($getgroup as $row)  

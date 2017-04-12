@@ -4,7 +4,8 @@ class Group extends CI_Controller {
 
 	public function __construct()
 	{
-        parent::__construct(); 
+        parent::__construct();
+        // load models 
 		$this->load->model('group_model');
 		$this->load->model('login_model'); 
     }
@@ -12,26 +13,26 @@ class Group extends CI_Controller {
 	// This shows the home page
 	public function index()
 	{		
-			$this->load->view('template/header');
-			$this->load->view('group/home');
-			$this->load->view('template/footer');
-			$gname = array(
-              'groupnameisset' => FALSE,
-              'groupisingame' => FALSE
-           );
-			$this->session->set_userdata($gname);
+		$this->load->view('template/header');
+		$this->load->view('group/home');
+		$this->load->view('template/footer');
+		$gname = array(
+          'groupnameisset' => FALSE,
+          'groupisingame' => FALSE
+       );
+		$this->session->set_userdata($gname);
 	}
 
-	// This shows the info page
-	public function info()
+	// This shows the help page
+	public function help()
 	{
-			$this->load->view('template/header');
-	    	$this->load->view('group/info');
-	    	$this->load->view('template/footer');
+		$this->load->view('template/header');
+    	$this->load->view('group/help');
+    	$this->load->view('template/footer');
 	}
 
-	// Function which you can create a group
-	public function create_group()
+	// Create a group
+	public function createGroup()
 	{
 		$this->form_validation->set_rules('name', 'Groep naam', 'trim|required|is_unique[group.name]');
 
@@ -44,22 +45,22 @@ class Group extends CI_Controller {
     	else
     	{
     		$this->load->view('template/header');
-    		$this->group_model->set_groups();
-    		$data['getonegroup'] = $this->group_model->GetOneGroup();
+    		$this->group_model->setGroups();    		
     		$gname = array(
                'name'  => $this->input->post('name'),
                'groupnameisset' => TRUE
            );
 			$this->session->set_userdata($gname);	
+			$data['getonegroup'] = $this->group_model->getOneGroup();
     		$this->load->view('group/add_users', $data);
     		$this->load->view('template/footer');
 		}
 	}
 
-	// Function which you can create users
-	public function add_users_group()
+	// You can add users to group
+	public function addUsersGroup()
 	{
-		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('username', 'Naam is niet ingevuld!', 'required');
 
 		if ($this->form_validation->run() === FALSE)
     	{
@@ -71,8 +72,8 @@ class Group extends CI_Controller {
     	else
     	{	
 			$this->load->view('template/header');
-    		$this->group_model->set_users_group();
-    		$data['getonegroup'] = $this->group_model->GetOneGroup();
+    		$this->group_model->setUsersGroup();
+    		$data['getonegroup'] = $this->group_model->getOneGroup();
     		$gname = array(
                'groupnameisset' => TRUE,
                'co2isset' => FALSE
@@ -83,7 +84,8 @@ class Group extends CI_Controller {
 		}
 	}
 
-	public function Set_Group_Ready()
+	//	You can set a group ready for the quiz
+	public function setGroupReady()
 	{
 		$this->group_model->SetGroupReady();
 		$this->session->unset_userdata('groupnameisset');

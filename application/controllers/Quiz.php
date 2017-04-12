@@ -19,7 +19,7 @@ class Quiz extends CI_Controller {
 			}
 	}
 	
-	public function quizdisplay()
+	public function quizDisplay()
 	{
 
 		if ($this->session->userdata('groupisingame')) {
@@ -32,7 +32,7 @@ class Quiz extends CI_Controller {
 			}
 	}
 
-	public function resultdisplay()
+	public function resultDisplay()
 	{
 		$this->data['checks'] = array(
 			'ques1' => $this->input->post('quizid1'),
@@ -53,32 +53,6 @@ class Quiz extends CI_Controller {
 		$this->load->view('quiz/result_display', $this->data);
 		$this->load->view('template/footer');
 
-	}
-
-	public function measuring_task()
-	{
-		if ($this->session->userdata('groupisingame')) {
-				
-				if ($this->session->userdata('co2isset')) {
-					$sess_data = array('co2isset' => TRUE);
-			    	$this->session->set_userdata($sess_data);
-			    	$this->load->view('template/header');
-					$this->load->view('quiz/measuring_task');
-					$this->load->view('template/footer');	
-				} else {
-					$sess_data = array('co2isset' => FALSE);
-			    	$this->session->set_userdata($sess_data);
-			    	$this->load->view('template/header');
-					$this->load->view('quiz/measuring_task');
-					$this->load->view('template/footer');	
-				}
-				
-		} else {
-
-			redirect("group");
-		}
-		
-		
 	}
 }
 ?>

@@ -1,13 +1,4 @@
 <div class="jumbotron">
-    <div class="collapse navbar-collapse" id="navbar1">
-        <ul class="nav navbar-nav navbar-right">
-            <?php if ($this->session->userdata('logged_in')){ ?>
-            <?php } else { ?>
-            <li><a href="<?php echo base_url(); ?>index.php/login">Login</a></li>
-            <li><a href="<?php echo base_url(); ?>index.php/signup">Signup</a></li>
-            <?php } ?>
-        </ul>
-    </div>
 
     <title>Home</title>
 
@@ -28,7 +19,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, <?php echo $this->session->userdata('uname'); ?> <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <!-- <li><a href="<?php echo site_url('home/logout') ?>"></a></li> -->
+            <!-- <li><a href="<?php// echo site_url('home/logout') ?>"></a></li> -->
             <li role="separator" class="divider"></li>
             <li><a href="<?php echo site_url('home/logout') ?>">Uitloggen</a></li>
           </ul>
@@ -46,11 +37,12 @@
     <div class="panel-heading">Alle groepen</div>
    
     <div class="panel-body">
-        <button class="btn btn-outline-secondary" href="<?php echo base_url();?>index.php/Home/Delete_All_Groups/>" type="button">Delete groups</button>
+        <a href="<?php echo base_url();?>index.php/home/deleteAllGroups/" class="btn btn-default"> Verwijder alle groepen</a>
       &nbsp;
-        <button class="btn btn-outline-secondary" href="<?php echo base_url();?>index.php/Home/Delete_All_Users/>" role="button">Delete users</button>
+        <a href="<?php echo base_url();?>index.php/home/deleteAllUsers/" class="btn btn-default"> Verwijder alle leerlingen</a>
       &nbsp;
-        <button class="btn btn-outline-secondary" href="<?php echo base_url();?>index.php/Home/Delete_All_Measure/>" role="button">Delete measurings</button>
+        <a href="<?php echo base_url();?>index.php/home/deleteAllMeasure/" class="btn btn-default">Verwijder alle meet antwoorden</a>
+       
     </div>
 
     <!-- Table -->
@@ -65,7 +57,7 @@
        ?>
         <tr> 
          <td><?php echo $row->name;?></td>  
-         <td><a href="<?php echo base_url();?>index.php/Home/Delete/<?php echo $row->id?>">Delete</a></td>
+         <td><a class="btn btn-default" href="<?php echo base_url();?>index.php/home/delete/<?php echo $row->id?>">Delete</a></td>
         </tr>  
        <?php } ?> 
     </table>

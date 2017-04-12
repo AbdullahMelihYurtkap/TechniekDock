@@ -7,7 +7,7 @@ class Group_model extends CI_Model{
 	}
 
 		// Set group in db
-	public function set_groups()
+	public function setGroups()
 	{
 		$data = array(
 			'name' => $this->input->post('name')
@@ -17,7 +17,7 @@ class Group_model extends CI_Model{
 	}
 
 		// Set users in 'one' group in db 
-	public function set_users_group()
+	public function setUsersGroup()
 	{
 		$data = array(
 			'username' => $this->input->post('username'),
@@ -28,14 +28,14 @@ class Group_model extends CI_Model{
 	}
 
 		// Get all groups
-	public function Getgroups()
+	public function getGroups()
 	{
 		$this->db->where('status', 1);
 		return $this->db->get('group')->result();
     }
 
     	// Get 'one' group by groupname
-	public function GetOneGroup()
+	public function getOneGroup()
     {
     	$this->db->select('username');
     	$this->db->where('groupname', $this->session->userdata('name'));
@@ -43,26 +43,26 @@ class Group_model extends CI_Model{
     }
 
     	// Delete 'one' group by id
-    public function Delgroups($id)
+    public function delGroups($id)
     {
 		$this->db->where('id', $id);
 		$this->db->delete('group');
 	}
 
 		// Delete all groups, refresh a/i
-    public function DelAllGroups()
+    public function delAllGroups()
     {
 		$this->db->truncate('group');
 	}
 
 		// Delete all users, refresh a/i
-	public function DellAllUsers()
+	public function dellAllUsers()
 	{
 		$this->db->truncate('users');
 	}
 
 		// Delete all measuring data, refresh a/i
-	public function DellAllMeasuring()
+	public function dellAllMeasuring()
 	{
 		$this->db->truncate('measure');
 	}

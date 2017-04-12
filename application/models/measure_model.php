@@ -3,7 +3,8 @@ defined('BASEPATH') OR exit('No direct script acces allowed');
 
 class Measure_model extends CI_Model {
 
-	public function insert_measure_task()
+	// set measure task answers in database with groupname
+	public function insertMeasureTask()
 	{	
 		$current = time();
 

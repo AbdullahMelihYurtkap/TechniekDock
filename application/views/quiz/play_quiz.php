@@ -7,7 +7,7 @@
 <div id="container">
 	<h1>Play the Quiz</h1>
 
-	<form method="post" action="<?php echo base_url();?>index.php/Quiz/resultdisplay">
+	<form method="post" action="<?php echo base_url();?>index.php/Quiz/resultDisplay">
 
 
 	<?php foreach($questions as $row) { ?>
@@ -27,7 +27,7 @@
 	<input type="submit" value="Submit"> 
 
 	</form>
-	<form action="<?php echo base_url();?>index.php/Quiz/measuring_task">
+	<form action="<?php echo base_url();?>index.php/measure/task">
 	<input type="submit" value="Meet Opdracht"> 
 	</form>
 	

@@ -17,17 +17,8 @@ class Login_model extends CI_Model {
 		$this->db->insert('admin', $data);
 	}
 
-	// get information from user
-	public function GetUserInfo()
-	{
-		$this->db->select('fullname,username,password');
-		$this->db->from('admin');
-		$un = $this->input->post('username');
-		$this->db->where('username', $un);
-	}
-
 	// get information from user spec username and pw
-	public function get_user($username, $pwd)
+	public function getUser($username, $pwd)
 	{
 		$this->db->where('username', $username);
 		$this->db->where('password', md5($pwd));

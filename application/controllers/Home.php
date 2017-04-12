@@ -6,7 +6,7 @@ class Home extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-
+		// load models
 		$this->load->model('login_model'); 
 		$this->load->model('group_model'); 
 	}
@@ -22,7 +22,7 @@ class Home extends CI_Controller {
 			$data["id"] = $session_data['id'];
 			$data["fullname"] = $session_data['fullname'];
 			$data["username"] = $session_data['username'];
-			$data['getgroup'] = $this->group_model->Getgroups();
+			$data['getgroup'] = $this->group_model->getGroups();
 			$this->load->view('admin/headeradmin');
 			$this->load->view('admin/home_view', $data);
 			$this->load->view('template/footer');
@@ -42,10 +42,10 @@ class Home extends CI_Controller {
 	}
 
 		// Admin can delete groups
-	public function Delete($id)
+	public function delete($id)
 	{
 		if ($this->session->userdata('logged_in')) {
-			$data = $this->group_model->Delgroups($id);
+			$data = $this->group_model->delGroups($id);
 			redirect(site_url('home'), 'refresh');
 		} else {
 			redirect(site_url('login'), 'refresh');
@@ -53,10 +53,10 @@ class Home extends CI_Controller {
 	}
 
 		// Admin can delete all groups
-	public function Delete_All_Groups()
+	public function deleteAllGroups()
 	{
 		if ($this->session->userdata('logged_in')) {
-			$data = $this->group_model->DelAllGroups();
+			$data = $this->group_model->delAllGroups();
 			redirect(site_url('home'), 'refresh');
 		} else {
 			redirect(site_url('login'), 'refresh');
@@ -64,10 +64,10 @@ class Home extends CI_Controller {
 	}
 
 		// Admin can delete all users
-	public function Delete_All_Users()
+	public function deleteAllUsers()
 	{
 		if ($this->session->userdata('logged_in')) {
-			$data = $this->group_model->DellAllUsers();
+			$data = $this->group_model->dellAllUsers();
 			redirect(site_url('home'), 'refresh');
 		} else {
 			redirect(site_url('login'), 'refresh');
@@ -76,10 +76,10 @@ class Home extends CI_Controller {
 	}
 
 		// Admin can delete all measurings
-	public function Delete_All_Measure()
+	public function deleteAllMeasure()
 	{
 		if ($this->session->userdata('logged_in')) {
-			$data = $this->group_model->DellAllMeasuring();
+			$data = $this->group_model->dellAllMeasuring();
 			redirect(site_url('home'), 'refresh');
 		} else {
 			redirect(site_url('login'), 'refresh');

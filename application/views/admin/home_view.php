@@ -41,7 +41,7 @@
       &nbsp;
         <a href="<?php echo base_url();?>index.php/home/deleteAllUsers/" class="btn btn-default"> Verwijder alle leerlingen</a>
       &nbsp;
-        
+        <a href="<?php echo base_url();?>index.php/home/deleteAllMeasures/" class="btn btn-default"> Verwijder alle meet antwoorden</a>
        
     </div>
 

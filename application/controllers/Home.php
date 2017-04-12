@@ -75,6 +75,18 @@ class Home extends CI_Controller {
 		
 	}
 
+	// Admin can delete all measures
+	public function deleteAllMeasures()
+	{
+		if ($this->session->userdata('logged_in')) {
+			$data = $this->group_model->dellAllMeasures();
+			redirect(site_url('home'), 'refresh');
+		} else {
+			redirect(site_url('login'), 'refresh');
+		}
+		
+	}
+
 	
 
 }
